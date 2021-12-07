@@ -1,4 +1,3 @@
-# bqn-language README
+# k-language
 
-BQN language symbol completion and descriptions.
-
+K language highliting and REPL support.

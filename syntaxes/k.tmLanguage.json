@@ -1,0 +1,109 @@
+{
+  "scopeName": "source.k",
+  "name": "k",
+  "fileTypes": [
+    "k"
+  ],
+  "patterns": [
+    {
+      "comment": "one line comment - beware scan",
+      "match": "^/.*",
+      "name": "comment.line.k"
+    },
+    {
+      "match": "(\\s+)(/.*)",
+      "captures": {
+        "1": {
+          "name": "ws"
+        },
+        "2": {
+          "name": "comment.line.k"
+        }
+      }
+    },
+    {
+      "comment": "system command",
+      "match": "^\\\\.*",
+      "name": "constant.other.k"
+    },
+    {
+      "begin": "\"",
+      "end": "\"",
+      "name": "string.kuoted.single.k",
+      "patterns": [
+        {
+          "match": "\\\\(\\\\|n|t|r|\")",
+          "name": "constant.character.escape.k"
+        }
+      ]
+    },
+    {
+      "match": "^[a-zA-Z]\\)",
+      "name": "keyword.control.k"
+    },
+    {
+      "match": "0[nNwW][hijefcpmdznuvt]?",
+      "name": "constant.language.k"
+    },
+    {
+      "match": "\\b(x|y|z)\\b",
+      "name": "variable.language.k"
+    },
+    {
+      "comment": "floats",
+      "match": "(?:(?:\\d+(?:\\.\\d*)?|\\.\\d+)[eE][+-]?\\d+|\\d+\\.\\d*|\\.\\d+)[efpntm]?",
+      "name": "constant.numeric.k"
+    },
+    {
+      "comment": "system namespaces",
+      "match": "\\.[z|Q|q|h|o]\\.[a-zA-Z0-9_]+",
+      "name": "support.function.k"
+    },
+    {
+      "comment": "special ! function",
+      "match": "-[1-9][0-9]?\\s*!",
+      "name": "support.function.k"
+    },
+    {
+      "match": "\\.[a-zA-Z][a-zA-Z0-9_\\.]*",
+      "name": "variable.k"
+    },
+    {
+      "match": "[a-zA-Z][a-zA-Z0-9_\\.]*",
+      "name": "entity.name.k"
+    },
+    {
+      "comment": "symbols + paths",
+      "match": "(`\\:[\\:a-zA-Z0-9\\._/]*|`(?:[a-zA-Z0-9\\.][\\:a-zA-Z0-9\\._]*)?)",
+      "name": "support.constant.k"
+    },
+    {
+      "match": "\\'|\\/\\:|\\\\\\:|\\'\\:|\\\\|\\/|0\\:|1\\:|2\\:",
+      "name": "keyword.operator.k"
+    },
+    {
+      "match": "(0x[0-9a-fA-F]+|\\d+[bhicjefpnuvt]?)",
+      "name": "constant.numeric.k"
+    },
+    {
+      "match": "(?:<=|>=|<>|::)|(?:\\$|%|&|\\@|\\.|\\_|\\#|\\*|\\^|\\-|\\+|\\+|~|\\,|!|>|<|=|\\||\\?|\\:)\\:?",
+      "name": "keyword.operator.k"
+    },
+    {
+      "match": "^[}\\]].*",
+      "name": "invalid.illegal.k"
+    },
+    {
+      "match": "[\\[{\\(]",
+      "name": "meta.brace.open.k"
+    },
+    {
+      "match": "[\\]}\\)]",
+      "name": "meta.brace.close.k"
+    },
+    {
+      "match": ";",
+      "name": "meta.punctuation.k"
+    }
+  ]
+}

@@ -1,121 +1,100 @@
 {
-    "name": "bqn-language",
-    "displayName": "BQN language autocomplete",
-    "description": "BQN language snippets",
-    "publisher": "razetime",
+    "name": "k-language",
+    "displayName": "K language support",
+    "description": "K language support",
+    "publisher": "suhr",
     "version": "0.0.1",
     "engines": {
         "vscode": "^1.58.1"
     },
     "repository": {
-		"type": "git",
-		"url": "https://github.com/razetime/bqn-vscode"
-	},
-    "categories": [
-        "Snippets"
-    ],
+        "type": "git",
+        "url": "https://github.com/suhr/k-vscode"
+    },
+    "categories": [],
     "activationEvents": [
-        "onLanguage:bqn"
+        "onLanguage:k"
     ],
     "main": "./src/extension.js",
     "contributes": {
         "languages": [
             {
-                "id": "bqn",
+                "id": "k",
                 "aliases": [
-                    "BQN",
-                    "bqn"
+                    "k"
                 ],
                 "extensions": [
-                    ".bqn"
+                    ".k"
                 ],
-                "configuration": "./language-configuration.json"
+                "configuration": "./syntaxes/k.conf.json"
             }
         ],
         "grammars": [
             {
-                "language": "bqn",
-                "scopeName": "source.bqn",
-                "path": "./syntaxes/bqn.tmLanguage.json"
+                "language": "k",
+                "scopeName": "source.k",
+                "path": "./syntaxes/k.tmLanguage.json"
             }
         ],
-        "snippets": [
-            {
-                "language": "bqn",
-                "path": "./snippets/snippets.code-snippets"
-            }
-        ],
-        "configurationDefaults": {
-            "[bqn]": {
-                "editor.wordSeparators": "˜˘¨⁼⌜´˝∞¯•÷×¬⎉⚇⍟◶⊘⎊⍎⍕⟨⟩√⋆⌽𝕨∊↑∧⊔⊏⊐π←→↙𝕎⍷𝕣⍋⊑⊒⍳⊣⊢⍉𝕤↕𝕗𝕘⊸∘○⟜⋄↖𝕊𝔽𝔾«⌾»·˙⥊𝕩↓∨⌊≡∾≍≠𝕏⍒⌈≢≤≥⇐‿↩",
-                "editor.foldingStrategy": "auto",
-                "editor.tabCompletion": "on"
-            }
-        },
         "commands": [
             {
-                "command": "language-bqn.createTerminal",
-                "title": "BQN: Create BQN REPL"
+                "command": "language-k.createTerminal",
+                "title": "K: Create K REPL"
             },
             {
-                "command": "language-bqn.loadScript",
-                "title": "BQN: Load Script"
+                "command": "language-k.loadScript",
+                "title": "K: Load Script"
             },
             {
-                "command": "language-bqn.executeSelection",
-                "title": "BQN: Execute Selection"
+                "command": "language-k.executeSelection",
+                "title": "K: Execute Selection"
             },
             {
-                "command": "language-bqn.executeLine",
-                "title": "BQN: Execute Line"
+                "command": "language-k.executeLine",
+                "title": "K: Execute Line"
             },
             {
-                "command": "language-bqn.executeLineAdvance",
-                "title": "BQN: Execute Line and Advance"
+                "command": "language-k.executeLineAdvance",
+                "title": "K: Execute Line and Advance"
             },
             {
-                "command": "language-bqn.backslash",
+                "command": "language-k.backslash",
                 "title": "thing"
             }
         ],
         "keybindings": [
             {
-                "command": "language-bqn.backslash",
-                "key": "\\",
-                "when": "editorTextFocus && editorLangId == 'bqn'"
-            },
-            {
-                "command": "language-bqn.executeSelection",
+                "command": "language-k.executeSelection",
                 "key": "ctrl+E",
-                "when": "editorTextFocus && editorLangId == 'bqn'"
+                "when": "editorTextFocus && editorLangId == 'k'"
             },
             {
-                "command": "language-bqn.loadScript",
+                "command": "language-k.loadScript",
                 "key": "ctrl+L",
-                "when": "editorTextFocus && editorLangId == 'bqn'"
+                "when": "editorTextFocus && editorLangId == 'k'"
             },
             {
-                "command": "language-bqn.executeLine",
+                "command": "language-k.executeLine",
                 "key": "ctrl+shift+enter",
-                "when": "editorTextFocus && editorLangId == 'bqn'"
+                "when": "editorTextFocus && editorLangId == 'k'"
             },
             {
-                "command": "language-bqn.executeLineAdvance",
+                "command": "language-k.executeLineAdvance",
                 "key": "ctrl+enter",
-                "when": "editorTextFocus && editorLangId == 'bqn'"
+                "when": "editorTextFocus && editorLangId == 'k'"
             }
         ],
         "configuration": {
             "type": "object",
-            "title": "BQN configuration",
+            "title": "K configuration",
             "properties": {
-                "bqn.executablePath": {
+                "k.executablePath": {
                     "type": [
                         "string",
                         "null"
                     ],
-                    "default": "bqn",
-                    "description": "Points to the BQN executable.",
+                    "default": "k-repl",
+                    "description": "Points to the k repl executable.",
                     "scope": "window"
                 }
             }

@@ -1,6 +1,6 @@
 {
     "comments": {
-        "lineComment": "#"
+        // "lineComment": " /"
     },
     "brackets": [
         [
@@ -15,10 +15,6 @@
             "(",
             ")"
         ],
-        [
-            "⟨",
-            "⟩"
-        ]
     ],
     "autoClosingPairs": [
         {
@@ -32,18 +28,6 @@
         {
             "open": "(",
             "close": ")"
-        },
-        {
-            "open": "⟨",
-            "close": "⟩"
-        },
-        {
-            "open": "'",
-            "close": "'",
-            "notIn": [
-                "string",
-                "comment"
-            ]
         },
         {
             "open": "\"",
@@ -68,18 +52,8 @@
             ")"
         ],
         [
-            "'",
-            "'"
-        ],
-        [
             "\"",
             "\""
         ]
     ],
-    "folding": {
-        "markers": {
-            "start": "^\\s*//\\s*#?region\\b",
-            "end": "^\\s*//\\s*#?endregion\\b"
-        }
-    },
 }
